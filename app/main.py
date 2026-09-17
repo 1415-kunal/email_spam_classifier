@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+
 from app.schemas import EmailRequest, PredictionResponse
 from src.prediction import predict_spam
 
@@ -17,6 +18,13 @@ def home():
     }
 
 
+@app.get("/health")
+def health_check():
+    return {
+        "status": "healthy"
+    }
+
+
 @app.post(
     "/predict",
     response_model=PredictionResponse
@@ -26,5 +34,6 @@ def predict_email(request: EmailRequest):
     prediction = predict_spam(request.email)
 
     return PredictionResponse(
-        prediction=prediction
+        prediction=prediction,
+        message=f"Email classified as {prediction}."
     )

@@ -11,3 +11,4 @@ class EmailRequest(BaseModel):
 
 class PredictionResponse(BaseModel):
     prediction: str
+    message: str
