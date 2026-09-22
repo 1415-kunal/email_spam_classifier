@@ -136,7 +136,7 @@ email_spam_classifier/
 │   └── spam_classifier.pkl
 │
 ├── data/
-│   └── raw/
+│   └── emails.csv
 │
 ├── notebooks/
 │   ├── 01_data_exploration.ipynb
@@ -433,7 +433,7 @@ The project provides a FastAPI REST API.
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/1415-kunal/email_spam_classifier
 ```
 
 ### 2. Move into the Project
